@@ -20,8 +20,15 @@
 // assert_eq(unique(list), unique_function)
 
 
+fn unique<T:Ord>(mut find_items: Vec<T>) -> Vec<T>{
+    find_items.sort();
+    find_items.dedup();
+    find_items
+}
 
 
 fn main() {
-    println!("Hello, world!");
+    let input: Vec<i32> = vec![1,2,3,3];
+    let answer: Vec<i32> = unique(input);
+    println!("Unique items: {:?}", answer);
 }
